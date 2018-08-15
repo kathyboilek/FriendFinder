@@ -4,41 +4,79 @@
 <meta charset="utf-8">
 <title>Friend Finder</title>
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href= "css/reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
             
 </head>
 
 <body>
-	
-	
-    <div class="input-field col s12">
-        <select>
-          <option value="" disabled selected>Select</option>
-          <option value="1">5 (Strongly Agree)</option>
-          <option value="2">4</option>
-          <option value="3">3</option>
-          <option value="3">2</option>
-          <option value="3">1</option>
-
-        </select>
-        <label>1. </label>
-    </div>
+  <div class="container">
+    <!-- Page Content goes here -->
+    <h3>Survey Questions</h3>
     
+    <div class="divider"></div>
+
+    <form action="#">
+      <div class="section">
+        <h4>About You</h4>
+          <h5>Name (Required)</h5>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="name" type="text" placeholder="Name">
+              </div>
+            </div>
+
+          <h5>Link to Photo Image (Required)</h5>
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>Image</span>
+                <input type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" id="imagelink" type="text" placeholder="Upload an image">
+              </div>
+            </div>
+      </div>
+      <div class="section">
+          <div class="input-field col s12">
+              <div class="select-wrapper">
+                <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                </select>
+              </div>
+              <label>Materialize Select</label>
+            </div>
+      </div>
+    </form>
+  </div>
+
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 <script lang="javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, options);
+    });
+  
+    // Or with jQuery
+  
+    $(document).ready(function(){
+      $('select').formSelect();
+    });
+          
+    $(document).ready(function() {
+    M.updateTextFields();
   });
-
-  // Or with jQuery
-
-  $(document).ready(function(){
-    $('select').formSelect();
-  });    
 </script>
 </body>
 </html>
